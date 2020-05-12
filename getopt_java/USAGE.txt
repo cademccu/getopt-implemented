@@ -1,0 +1,10 @@
+Made this in package format, so as to keep class file seperate for template use in my future.
+
+To compile (in terminal with test ExampleClass):
+
+(from directory above ../)
+javac getopt_java/*.java
+
+To run:
+
+java getopt_java.ExampleClass
