@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
 
 			case 'y':
 				y_flag = true;
-
+				break;
 			default:
 				break;
 		} // end switch on opt
