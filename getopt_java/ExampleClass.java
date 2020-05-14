@@ -9,9 +9,7 @@ public class ExampleClass {
 
 		System.out.println("Get Opt Implemented\n");
 
-		getopt getOpt = new getopt();
-
-		getOpt.test();
+		getopt getOpt = new getopt(args);
 
 
 	} // end main
