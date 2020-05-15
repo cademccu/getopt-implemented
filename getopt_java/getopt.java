@@ -6,28 +6,46 @@ import java.util.ArrayList;
 
 
 public class getopt {
-
+	// the args passed in from the other class
 	private String[] raw_arguments;
+
+	private ArrayList<Argument> processed_arguments; 
+
+	private String[] long_arguments;
+	private String single_char_arguments;
 	
 
 	/**
-	 * This sets up and does all the argument getting.
-	 * everything else is accessible via getters.
+	 * Create the object with the full array from the command line
 	 */
 	public getopt(String[] raw_arguments) {
 		this.raw_arguments = raw_arguments;
 	}
 
+
 	/**
 	 * Sets up regular, single letter options
 	 * @Param String raw_options a string containing all single character options. If char followed by : then needs argument.
 	 */
-	protected void set_regular_options(String raw_options) {
-		System.out.println(raw_arguments.length);
+	public void set_regular_options(String single_char_arguments) {
+		this.single_char_arguments = single_char_arguments;
 	}
 
+	/**
+	 * for setting long arguments or GNU style arguments.
+	 * flags with last char ':' require an arguments
+	 * @Param String[] list of long arguments
+	 */
+	public void set_long_options(String[] long_arguments){
+		this.long_arguments = long_arguments;
+	}
 
+	/**
+	 * the point of this private class is to have a quick data structure to read information into dynamically.
+	 * it can then be returned in a fixed size string[] to be processed
+	 */
 	private class Argument {
+		// Class variables
 		private String argument_char;
 		private String argument_value;
 		private boolean has_value;
@@ -48,6 +66,6 @@ public class getopt {
 				return return_arr;
 			}
 		}
-	}
+	}// end argument class
 
 } // end getopt class
